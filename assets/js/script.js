@@ -1,5 +1,7 @@
 const apiKey = "b53e99656ff24a5b5005671f604cde31"
 
+var currentDate = moment().format("MM/DD/YYYY");
+
 var cityInputEl = document.querySelector("#city-name");
 var cityFormEl = document.querySelector("#city-form");
 
@@ -9,7 +11,7 @@ var forecastEl = document.querySelector("#forecast");
 function displayWeather(weatherData, city) {
     //weatherInfoEl.textContent = "";
     forecastEl.textContent = "";
-    document.querySelector("#currentName").innerText = city.toUpperCase();
+    document.querySelector("#currentName").innerText = city.toUpperCase() + " - " + currentDate;
     document.querySelector("#currentTemp").innerText = "Temp: " + weatherData.current.temp + " °F";
     document.querySelector("#currentWind").innerText = "Wind: " + weatherData.current.wind_speed + " MPH";
     document.querySelector("#currentHumidity").innerText = "Humidity: " + weatherData.current.humidity + " %";
@@ -17,22 +19,25 @@ function displayWeather(weatherData, city) {
 
     document.querySelector("#five-day").innerText = "5-Day Forecast";
 
-    console.log(weatherData.daily);
-
     for (let i = 1; i <= 5; i++) {
         var forecastCardEl = document.createElement("div");
         forecastCardEl.classList.add("card", "py-2", "px-2");
-        var dateP = document.createElement("p");
+
+        var dateH5 = document.createElement("h5");
         var iconDiv = document.createElement("div");
         var tempP = document.createElement("p");
         var windP = document.createElement("p");
         var humidityP = document.createElement("p");
-        dateP.textContent = "date"
+
+        var futureDate = moment().add(i, "days").format("MM/DD/YYYY");
+
+        dateH5.textContent = futureDate;
         iconDiv.innerHTML = "<img src='http://openweathermap.org/img/wn/" + weatherData.daily[i].weather[0].icon + "@2x.png' alt='weather icon'>";
         tempP.textContent = "Temp: " + weatherData.daily[i].temp.day + " °F";
         windP.textContent = "Wind: " + weatherData.daily[i].wind_speed + " MPH";
         humidityP.textContent = "Humidity: " + weatherData.daily[i].humidity + " %";
-        forecastCardEl.appendChild(dateP);
+
+        forecastCardEl.appendChild(dateH5);
         forecastCardEl.appendChild(iconDiv);
         forecastCardEl.appendChild(tempP);
         forecastCardEl.appendChild(windP);
