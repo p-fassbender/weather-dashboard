@@ -15,26 +15,72 @@
 
 <body>
 
-    <header class = "bg-info text-white text-center p-2">
+    <header class="bg-info text-white text-center p-2">
         <h1>Weather Dashboard</h1>
     </header>
 
     <main class="row justify-space-between">
         <!-- left column with search form and search history-->
         <div class="col-12 col-md-4">
-            <div class = "card">
+            <div class="card m-3 p-3">
                 <h3>Search for a City</h3>
-                <form>
+                <form id="city-form">
                     <div class="form-group">
-                        <input id="city-name" type="text" class="form-control" placeholder="City"/>
+                        <input id="city-name" type="text" class="form-control" placeholder="City" />
                         <button type="submit" class="btn btn-info">Search</button>
                     </div>
                 </form>
             </div>
-            
         </div>
         <!-- right column with results display-->
         <div class="col-12 col-md-8">
+            <div id="weather-info" class="m-1 p-2">
+                <h2 id="currentName"></h2>
+                <p id="currentTemp"></p>
+                <p id="currentWind"></p>
+                <p id="currentHumidity"></p>
+                <p id = currentUV></p>
+            </div>
+            <div id="forecast" class="m-1 p-2">
+                <h3>5-Day Forecast</h3>
+                <div class="d-flex justify-content-around">
+                    <div class="card p-2">
+                        <p>date</p>
+                        <p>icon</p>
+                        <p>temp</p>
+                        <p>wind</p>
+                        <p>humidity</p>
+                    </div>
+                    <div class="card p-3 ">
+                        <p>date</p>
+                        <p>icon</p>
+                        <p>temp</p>
+                        <p>wind</p>
+                        <p>humidity</p>
+                    </div>
+                    <div class="card p-3 ">
+                        <p>date</p>
+                        <p>icon</p>
+                        <p>temp</p>
+                        <p>wind</p>
+                        <p>humidity</p>
+                    </div>
+                    <div class="card p-3">
+                        <p>date</p>
+                        <p>icon</p>
+                        <p>temp</p>
+                        <p>wind</p>
+                        <p>humidity</p>
+                    </div>
+                    <div class="card p-3">
+                        <p>date</p>
+                        <p>icon</p>
+                        <p>temp</p>
+                        <p>wind</p>
+                        <p>humidity</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
