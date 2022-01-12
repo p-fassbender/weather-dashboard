@@ -41,49 +41,14 @@
                 <p id="currentHumidity"></p>
                 <p id = currentUV></p>
             </div>
-            <div id="forecast" class="m-1 p-2">
-                <h3>5-Day Forecast</h3>
-                <div class="d-flex justify-content-around">
-                    <div class="card p-2">
-                        <p>date</p>
-                        <p>icon</p>
-                        <p>temp</p>
-                        <p>wind</p>
-                        <p>humidity</p>
-                    </div>
-                    <div class="card p-3 ">
-                        <p>date</p>
-                        <p>icon</p>
-                        <p>temp</p>
-                        <p>wind</p>
-                        <p>humidity</p>
-                    </div>
-                    <div class="card p-3 ">
-                        <p>date</p>
-                        <p>icon</p>
-                        <p>temp</p>
-                        <p>wind</p>
-                        <p>humidity</p>
-                    </div>
-                    <div class="card p-3">
-                        <p>date</p>
-                        <p>icon</p>
-                        <p>temp</p>
-                        <p>wind</p>
-                        <p>humidity</p>
-                    </div>
-                    <div class="card p-3">
-                        <p>date</p>
-                        <p>icon</p>
-                        <p>temp</p>
-                        <p>wind</p>
-                        <p>humidity</p>
-                    </div>
-                </div>
+            <div class="m-1 p-2">
+                <h3 id="five-day"></h3>
+                <div id="forecast" class="d-flex flex-wrap justify-content-between"></div>
             </div>
         </div>
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
